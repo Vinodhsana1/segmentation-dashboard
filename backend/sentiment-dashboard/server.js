@@ -3,10 +3,14 @@ const http = require('http');
 const socketIo = require('socket.io');
 const Twit = require('twit');
 const Sentiment = require('sentiment');
+const cors = require('cors');
 
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
+app.use(cors({
+    origin: 'https://66a15cbf65ce063385dcbbf7--jade-cat-4e2aa2.netlify.app/' 
+}));
 
 const T = new Twit({
     consumer_key: 'rUO78xhGNNHJC2QpI4C0wOIGz',
